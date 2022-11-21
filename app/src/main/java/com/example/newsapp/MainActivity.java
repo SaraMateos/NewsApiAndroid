@@ -6,7 +6,9 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,8 +28,11 @@ public class MainActivity extends AppCompatActivity implements SelectListener, V
     RecyclerView recyclerView;
     CustomAdapter adapter;
     ProgressDialog dialog;
-    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7;
+    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btnSave, btnShow, btnDelete;
     SearchView searchView;
+    SharedPreferences sharedPreferences;
+    public static final String myPreference = "myPredf";
+    public static final String Busqueda = "busquedaKey";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +81,58 @@ public class MainActivity extends AppCompatActivity implements SelectListener, V
 
         RequestManager manager = new RequestManager(this);
         manager.getNewsHeadlines(listener, "general", null);
+
+        //Shared Preferences
+        sharedPreferences = getSharedPreferences(myPreference, Context.MODE_PRIVATE);
+
+        if (sharedPreferences.contains(Busqueda)) {
+            searchView.setQuery(sharedPreferences.getString(Busqueda, ""), false);
+        }
+
+        btnDelete = (Button) findViewById(R.id.btnDelete);
+        btnDelete.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Delete();
+            }
+        });
+
+        btnSave = (Button) findViewById(R.id.btnSave);
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Save();
+            }
+        });
+
+        // Boton de Mostrar
+        btnShow = (Button) findViewById(R.id.btnShow);
+        btnShow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Show();
+            }
+        });
+    }
+
+    //Metodos SharedPreferences
+    public void Delete() {
+        searchView.setQuery("", false);
+    }
+
+    public void Show() {
+        sharedPreferences = getSharedPreferences(myPreference, Context.MODE_PRIVATE);
+
+        if (sharedPreferences.contains(Busqueda)) {
+            searchView.setQuery(sharedPreferences.getString(Busqueda, ""), false);
+        }
+    }
+
+    public void Save() {
+        String b = searchView.getQuery().toString();
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(Busqueda, b);
+        editor.commit();
     }
 
     //A la hora de buscar, mostrará un Toast en caso de que ocurra un error o no encuentre datos
@@ -94,7 +151,6 @@ public class MainActivity extends AppCompatActivity implements SelectListener, V
         @Override
         public void onError(String message) {
             Toast.makeText(MainActivity.this, "An Error Occured!", Toast.LENGTH_SHORT).show();
-
         }
     };
 
