@@ -28,7 +28,6 @@
                 android:layout_height="wrap_content"
                 android:textSize="22sp"
                 android:textStyle="bold"
-                android:textColor="@color/black"
                 android:maxLines="3">
 
             </TextView>
@@ -40,7 +39,6 @@
                 android:layout_marginTop="6dp"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="@color/purple_500"
                 android:maxLines="1">
 
             </TextView>
