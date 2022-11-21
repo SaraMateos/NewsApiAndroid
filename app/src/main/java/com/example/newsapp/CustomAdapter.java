@@ -48,7 +48,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomViewHolder> {
                 listener.OnNewsClicked(headlines.get(position));
             }
         });
-
     }
 
     @Override

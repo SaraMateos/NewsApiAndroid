@@ -20,6 +20,7 @@ import com.example.newsapp.Models.NewsHeadlines;
 import java.util.List;
 
 //TODO: txt
+//TODO: webView --> https://www.youtube.com/watch?v=e0qKG8cUAp8
 
 public class MainActivity extends AppCompatActivity implements SelectListener, View.OnClickListener {
 
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener, V
 
         searchView = findViewById(R.id.search_view);
 
+        //Realiza la busqueda
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -103,7 +105,6 @@ public class MainActivity extends AppCompatActivity implements SelectListener, V
             }
         });
 
-        // Boton de Mostrar
         btnShow = (Button) findViewById(R.id.btnShow);
         btnShow.setOnClickListener(new View.OnClickListener() {
             @Override
