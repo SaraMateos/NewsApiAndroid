@@ -5,4 +5,5 @@ import com.example.newsapp.Models.NewsHeadlines;
 public interface SelectListener {
 
     void OnNewsClicked(NewsHeadlines headlines);
+
 }
