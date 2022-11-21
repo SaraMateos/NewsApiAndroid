@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">News Api</string>
+    <string name="apiKey">8ddc298af5504ff5851e9015be833752</string>
+    <string name="searchNews">Buscar noticias...</string>
+    <string name="save">Guardar</string>
+    <string name="delete">Borrar</string>
+    <string name="show">Mostrar</string>
+    <string name="progressDialogCargaCategoria">"Buscando nuevos artículos de "</string>
+    <string name="progressDialogInicio">Buscando nuevos artículos...</string>
+    <string name="toastNoData">No se han encontrado datos</string>
+    <string name="toastError">Ha ocurrido un error!</string>
+    <string name="errorRequest">Fallo en el Request!</string>
+</resources>

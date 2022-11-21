@@ -93,7 +93,7 @@
             android:id="@+id/search_view"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:defaultQueryHint="Search News..."
+            app:defaultQueryHint="@string/searchNews"
             app:iconifiedByDefault="false">
 
         </androidx.appcompat.widget.SearchView>
@@ -111,7 +111,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
             android:padding="6dp"
-            android:text="Save"
+            android:text="@string/save"
             android:textSize="12sp" />
 
         <Button
@@ -120,7 +120,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
             android:padding="6dp"
-            android:text="Show"
+            android:text="@string/show"
             android:textSize="12sp" />
 
         <Button
@@ -129,7 +129,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
             android:padding="6dp"
-            android:text="Delete"
+            android:text="@string/delete"
             android:textSize="12sp" />
 
     </LinearLayout>

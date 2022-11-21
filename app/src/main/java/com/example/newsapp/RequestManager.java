@@ -32,7 +32,7 @@ public class RequestManager {
                 @Override
                 public void onResponse(Call<NewsApiResponse> call, Response<NewsApiResponse> response) {
                     if (!response.isSuccessful()) {
-                        Toast.makeText(context, "Error!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, R.string.toastError, Toast.LENGTH_SHORT).show();
                     }
 
                     listener.onFetchData(response.body().getArticles(), response.message());
@@ -40,7 +40,7 @@ public class RequestManager {
 
                 @Override
                 public void onFailure(Call<NewsApiResponse> call, Throwable t) {
-                    listener.onError("Request Failed!");
+                    listener.onError(R.string.errorRequest);
                 }
             });
         } catch (Exception e) {

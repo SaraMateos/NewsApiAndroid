@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">News Api</string>
     <string name="apiKey">8ddc298af5504ff5851e9015be833752</string>
+    <string name="searchNews">Search News...</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="show">Show</string>
+    <string name="progressDialogCargaCategoria">Fetching news articles of</string>
+    <string name="progressDialogInicio">Fetching news articles...</string>
+    <string name="toastNoData">No data found</string>
+    <string name="toastError">An Error Occured!</string>
+    <string name="errorRequest">Request Failed!</string>
 </resources>

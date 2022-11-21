@@ -19,8 +19,6 @@ import com.example.newsapp.Models.NewsHeadlines;
 
 import java.util.List;
 
-//TODO: SharedPreferences
-//TODO: Traducciones
 //TODO: txt
 
 public class MainActivity extends AppCompatActivity implements SelectListener, View.OnClickListener {
@@ -45,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener, V
             @Override
             public boolean onQueryTextSubmit(String query) {
 
-                dialog.setTitle("Fetching news articles of " + query);
+                dialog.setTitle(R.string.progressDialogCargaCategoria + query);
                 dialog.show();
 
                 RequestManager manager = new RequestManager(MainActivity.this);
@@ -61,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener, V
         });
 
         dialog = new ProgressDialog(this);
-        dialog.setTitle("Fetching news articles...");
+        dialog.setTitle(R.string.progressDialogInicio);
         dialog.show();
 
         btn1 = findViewById(R.id.btn_1);
@@ -141,7 +139,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener, V
         @Override
         public void onFetchData(List<NewsHeadlines> list, String message) {
             if (list.isEmpty()) {
-                Toast.makeText(MainActivity.this, "No data found", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, R.string.toastNoData, Toast.LENGTH_SHORT).show();
             } else {
                 showNews(list);
                 dialog.dismiss();
@@ -149,8 +147,8 @@ public class MainActivity extends AppCompatActivity implements SelectListener, V
         }
 
         @Override
-        public void onError(String message) {
-            Toast.makeText(MainActivity.this, "An Error Occured!", Toast.LENGTH_SHORT).show();
+        public void onError(int message) {
+            Toast.makeText(MainActivity.this, R.string.toastError, Toast.LENGTH_SHORT).show();
         }
     };
 
@@ -175,7 +173,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener, V
         Button button = (Button) view;
         String category = button.getText().toString();
 
-        dialog.setTitle("Fetching news articles of " + category);
+        dialog.setTitle(R.string.progressDialogCargaCategoria + category);
         dialog.show();
 
         RequestManager manager = new RequestManager(this);
