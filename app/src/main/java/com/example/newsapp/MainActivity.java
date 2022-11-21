@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener, V
             @Override
             public boolean onQueryTextSubmit(String query) {
 
-                dialog.setTitle(R.string.progressDialogCargaCategoria + query);
+                dialog.setTitle(getString(R.string.progressDialogCargaCategoria) + query);
                 dialog.show();
 
                 RequestManager manager = new RequestManager(MainActivity.this);
@@ -173,7 +173,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener, V
         Button button = (Button) view;
         String category = button.getText().toString();
 
-        dialog.setTitle(R.string.progressDialogCargaCategoria + category);
+        dialog.setTitle(getString(R.string.progressDialogCargaCategoria) + category);
         dialog.show();
 
         RequestManager manager = new RequestManager(this);
