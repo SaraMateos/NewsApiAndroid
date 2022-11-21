@@ -1,6 +1,6 @@
 # News Api Android
 
-News api es una aplicación que muestra las últimas noticias de todo el mundo utilizando a la API ["News Api"](https://newsapi.org/).
+News api es una aplicación que muestra las últimas noticias de todo el mundo utilizando a la API "[News Api](https://newsapi.org/)".
 
 https://oscarnovas.com/blog/lenguaje-markdown-en-readmemd
 
