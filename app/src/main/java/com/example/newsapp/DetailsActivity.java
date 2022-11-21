@@ -12,7 +12,7 @@ import com.squareup.picasso.Picasso;
 public class DetailsActivity extends AppCompatActivity {
 
     NewsHeadlines headlines;
-    TextView txt_title, txt_author, txt_time, txt_detail, txt_content;
+    TextView txt_title, txt_author, txt_time, txt_detail, txt_content, txt_url;
     ImageView img_news;
 
     @Override
@@ -25,6 +25,7 @@ public class DetailsActivity extends AppCompatActivity {
         txt_time = findViewById(R.id.text_detail_time);
         txt_detail = findViewById(R.id.text_detail_detail);
         txt_content = findViewById(R.id.text_detail_content);
+        txt_url = findViewById(R.id.text_detail_url);
         img_news = findViewById(R.id.img_details_news);
 
         headlines = (NewsHeadlines) getIntent().getSerializableExtra("data");
@@ -34,6 +35,7 @@ public class DetailsActivity extends AppCompatActivity {
         txt_time.setText(headlines.getPublishedAt());
         txt_detail.setText(headlines.getDescription());
         txt_content.setText(headlines.getContent());
+        txt_url.setText(headlines.getUrl());
         Picasso.get().load(headlines.getUrlToImage()).into(img_news);
     }
 }
